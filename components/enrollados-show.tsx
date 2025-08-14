@@ -13,7 +13,7 @@ const showData = {
     description:
       "Los íconos de la comedia y la televisión mexicana se unen en un nuevo formato para llenarte de risas y diversión.",
     tagline: "LA REUNIÓN",
-    hosts: "CON ADAL, YORDI, MAURICIO, ROXANA, GABY Y LALO",
+    hosts: "CON ADAL RAMONES, YORDI ROSADO, MAURICIO CASTILLO, ROXANA CASTELLANOS, GABY PLATAS Y LALO ESPAÑA",
     season: "ÚNICA TEMPORADA",
   },
   announcement: {

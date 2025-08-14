@@ -10,30 +10,21 @@ export const metadata: Metadata = {
     template: '%s | ENROLLADOS',
   },
   description:
-    'ENROLLADOS: la reunión en vivo de íconos de la comedia y la televisión mexicana. Fechas, ciudades, boletos y noticias oficiales.',
+    'ENROLLADOS: la reunión en vivo del elenco de Otro Rollo. Adal Ramones, Yordi Rosado, Mauricio Castillo, Roxana Castellanos, Gaby Platas y Lalo España. Fechas, ciudades y boletos oficiales.',
   keywords: [
-    'Enrollados',
-    'show en vivo',
-    'comedia en México',
-    'tour de comedia',
-    'stand up',
-    'entretenimiento',
-    'boletos',
-    'gira 2026',
-    'Adal',
-    'Yordi',
-    'Gaby',
-    'Roxanna',
-    'Lalo',
-    'Mauricio',
-    'Auditorio Nacional',
-    'Arena Monterrey',
-    'CDMX',
-    'Guadalajara',
-    'Monterrey',
-    'Puebla',
-    'Querétaro',
-    'Mérida',
+    // Marca y concepto
+    'Enrollados', 'ENROLLADOS show', 'ENROLLADOS tour', 'ENROLLADOS 2026',
+    // Programa origen
+    'Otro Rollo', 'elenco de Otro Rollo', 'reunión Otro Rollo',
+    // Talento
+    'Adal Ramones', 'Yordi Rosado', 'Mauricio Castillo', 'Roxana Castellanos', 'Gaby Platas', 'Lalo España',
+    // Categorías y transaccionales
+    'show en vivo', 'comedia en México', 'tour de comedia', 'stand up', 'entretenimiento',
+    'boletos', 'boletos en línea', 'compra de boletos', 'preventas',
+    // Intención local/geográfica
+    'gira 2026', 'tour México 2026', 'CDMX', 'Guadalajara', 'Monterrey', 'Puebla', 'Querétaro', 'Mérida', 'Tijuana', 'Mexicali', 'Hermosillo', 'Torreón', 'Saltillo', 'Toluca', 'Pachuca', 'Veracruz', 'León', 'Aguascalientes', 'Chihuahua', 'San Luis Potosí',
+    // Venues frecuentes
+    'Pepsi Center', 'Showcenter Complex', 'Auditorio Explanada', 'Auditorio Metropolitano', 'Foro GNP', 'Auditorio Benito Juárez', 'Auditorio Josefa Ortiz de Domínguez', 'Poliforúm', 'Coliseo Centenario', 'Centro de Usos Múltiples', 'Tangamanga', 'Teatro Morelos'
   ],
   alternates: {
     canonical: '/',
@@ -41,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'ENROLLADOS — Show en vivo',
     description:
-      'Los íconos de la comedia y la TV mexicana en un nuevo formato. Consulta ciudades, fechas y compra boletos.',
+      'La reunión en vivo del elenco de Otro Rollo: Adal Ramones, Yordi Rosado, Mauricio Castillo, Roxana Castellanos, Gaby Platas y Lalo España. Consulta ciudades, fechas y compra boletos.',
     url: '/',
     siteName: 'ENROLLADOS',
     locale: 'es_MX',
@@ -59,7 +50,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ENROLLADOS — Show en vivo',
     description:
-      'Fechas, ciudades y boletos del show ENROLLADOS. La reunión de la comedia mexicana.',
+      'Fechas, ciudades y boletos oficiales de ENROLLADOS con el elenco de Otro Rollo: Adal Ramones, Yordi Rosado, Mauricio Castillo, Roxana Castellanos, Gaby Platas y Lalo España.',
     images: ['/placeholder.jpg'],
   },
   robots: {
@@ -86,6 +77,33 @@ export const metadata: Metadata = {
   },
 }
 
+// JSON-LD básico para SEO (Website + Organization)
+function JsonLd() {
+  const ld = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'ENROLLADOS',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://enrolladosenvivo.com',
+    sameAs: [
+      'https://www.facebook.com',
+      'https://www.instagram.com',
+      'https://www.youtube.com',
+      'https://x.com',
+    ],
+    member: [
+      'Adal Ramones',
+      'Yordi Rosado',
+      'Mauricio Castillo',
+      'Roxana Castellanos',
+      'Gaby Platas',
+      'Lalo España',
+    ],
+  }
+  return (
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
+  )
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -101,6 +119,7 @@ html {
   --font-mono: ${GeistMono.variable};
 }
         `}</style>
+        <JsonLd />
       </head>
       <body>{children}</body>
     </html>
