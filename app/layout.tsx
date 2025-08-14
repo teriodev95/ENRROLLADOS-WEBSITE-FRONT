@@ -4,7 +4,7 @@ import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://enrollados.mx'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'enrolladosenvivo.com'),
   title: {
     default: 'ENROLLADOS — Show en vivo',
     template: '%s | ENROLLADOS',

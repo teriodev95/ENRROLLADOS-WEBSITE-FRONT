@@ -13,11 +13,11 @@ const showData = {
     description:
       "Los íconos de la comedia y la televisión mexicana se unen en un nuevo formato para llenarte de risas y diversión.",
     tagline: "LA REUNIÓN",
-    hosts: "CON ADAL, YORDI, MAURICIO, ROXANNA, GABY Y LALO",
+    hosts: "CON ADAL, YORDI, MAURICIO, ROXANA, GABY Y LALO",
     season: "ÚNICA TEMPORADA",
   },
   announcement: {
-    text: "Boletos a la venta a partir del viernes 15 de agosto — 11:00 am",
+    text: "Boletos a la venta a partir del viernes 15 de agosto — 11 am",
     start: "2025-08-15T11:00:00-06:00",
   },
   dates: [
@@ -114,7 +114,7 @@ const showData = {
       date: "2026-02-07",
       time: "20:30",
       city: "VERACRUZ",
-      venue: "AUDITORIO BENITO JUAREZ",
+      venue: "AUDITORIO BENITO JUÁREZ",
       status: "coming_soon",
     },
     {
@@ -122,7 +122,7 @@ const showData = {
       date: "2026-02-11",
       time: "20:30",
       city: "QUERÉTARO",
-      venue: "AUDITORIO JOSEFA ORTIZ DE DOMINGUEZ",
+      venue: "AUDITORIO JOSEFA ORTIZ DE DOMÍNGUEZ",
       status: "coming_soon",
     },
     {
@@ -130,7 +130,7 @@ const showData = {
       date: "2026-02-12",
       time: "20:30",
       city: "LEÓN",
-      venue: "POLIFORUM",
+      venue: "POLIFORÚM",
       status: "coming_soon",
     },
     {
@@ -154,15 +154,15 @@ const showData = {
       date: "2026-02-21",
       time: "20:30",
       city: "GUADALAJARA",
-      venue: "TEATRO GALERIAS",
+      venue: "TEATRO GALERÍAS",
       status: "coming_soon",
     },
     {
       id: "2026-02-28-slp",
       date: "2026-02-28",
       time: "20:30",
-      city: "S.L. POTOSÍ",
-      venue: "TEATRO DE LA CIUDAD TANGAMANGA 1",
+      city: "SAN LUIS POTOSÍ",
+      venue: "TANGAMANGA",
       status: "coming_soon",
     },
   ],
