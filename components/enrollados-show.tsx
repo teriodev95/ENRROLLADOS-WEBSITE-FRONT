@@ -175,10 +175,10 @@ const showData = {
   },
 }
 
-function formatDate(dateString: string) {
-  const date = new Date(dateString)
+function formatDate(isoDate: string) {
+  const [year, month, day] = isoDate.split("-").map(Number)
   const months = ["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"]
-  return `${months[date.getMonth()]} ${date.getDate().toString().padStart(2, "0")}`
+  return `${months[month - 1]} ${String(day).padStart(2, "0")}`
 }
 
 export function EnrolladosShow() {
