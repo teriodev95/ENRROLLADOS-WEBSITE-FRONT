@@ -1,0 +1,185 @@
+{
+  "page": {
+    "title": "ENROLLADOS",
+    "subtitle": "SHOW EN VIVO",
+    "description": "Los íconos de la comedia y la TV mexicana en un nuevo formato.",
+    "tagline": "LA REUNIÓN",
+    "hosts": "CON ADAL, YORDI, GABY, ROX, MALU Y LALO",
+    "season": "ÚNICA TEMPORADA"
+  },
+  "announcement": {
+    "text": "Boletos a la venta a partir del viernes 15 de agosto — 11:00 h",
+    "start": "2025-08-15T11:00:00-06:00"
+  },
+  "dates": [
+    {
+      "id": "2026-01-15-mxl",
+      "date": "2026-01-15",
+      "time": "20:30",
+      "city": "MEXICALI",
+      "venue": "Auditorio PSF",
+      "status": "coming_soon",
+      "ticket_url": null
+    },
+    {
+      "id": "2026-01-16-tij",
+      "date": "2026-01-16",
+      "time": "20:30",
+      "city": "TIJUANA",
+      "venue": "Foro Tijuana",
+      "status": "coming_soon",
+      "ticket_url": null
+    },
+    {
+      "id": "2026-01-17-her",
+      "date": "2026-01-17",
+      "time": "20:00",
+      "city": "HERMOSILLO",
+      "venue": "Por confirmar",
+      "status": "coming_soon",
+      "ticket_url": null
+    },
+    {
+      "id": "2026-01-21-tor",
+      "date": "2026-01-21",
+      "time": "20:30",
+      "city": "TORREÓN",
+      "venue": "Teatro Nazas",
+      "status": "coming_soon",
+      "ticket_url": null
+    },
+    {
+      "id": "2026-01-22-sal",
+      "date": "2026-01-22",
+      "time": "20:30",
+      "city": "SALTILLO",
+      "venue": "Teatro de la Ciudad",
+      "status": "coming_soon",
+      "ticket_url": null
+    },
+    {
+      "id": "2026-01-24-mty",
+      "date": "2026-01-24",
+      "time": "20:30",
+      "city": "MONTERREY",
+      "venue": "Arena Monterrey",
+      "status": "coming_soon",
+      "ticket_url": null
+    },
+    {
+      "id": "2026-01-28-tol",
+      "date": "2026-01-28",
+      "time": "20:30",
+      "city": "TOLUCA",
+      "venue": "Teatro Morelos",
+      "status": "coming_soon",
+      "ticket_url": null
+    },
+    {
+      "id": "2026-01-31-cdmx",
+      "date": "2026-01-31",
+      "time": "20:30",
+      "city": "CDMX",
+      "venue": "Auditorio Nacional",
+      "status": "coming_soon",
+      "ticket_url": null
+    },
+    {
+      "id": "2026-02-04-pac",
+      "date": "2026-02-04",
+      "time": "20:30",
+      "city": "PACHUCA",
+      "venue": "Teatro San Francisco",
+      "status": "coming_soon",
+      "ticket_url": null
+    },
+    {
+      "id": "2026-02-05-pue",
+      "date": "2026-02-05",
+      "time": "20:30",
+      "city": "PUEBLA",
+      "venue": "Teatro Principal",
+      "status": "coming_soon",
+      "ticket_url": null
+    },
+    {
+      "id": "2026-02-06-mer",
+      "date": "2026-02-06",
+      "time": "20:30",
+      "city": "MÉRIDA",
+      "venue": "Teatro Peón Contreras",
+      "status": "coming_soon",
+      "ticket_url": null
+    },
+    {
+      "id": "2026-02-07-ver",
+      "date": "2026-02-07",
+      "time": "20:30",
+      "city": "VERACRUZ",
+      "venue": "Teatro Clavijero",
+      "status": "coming_soon",
+      "ticket_url": null
+    },
+    {
+      "id": "2026-02-11-que",
+      "date": "2026-02-11",
+      "time": "20:30",
+      "city": "QUERÉTARO",
+      "venue": "Teatro de la República",
+      "status": "coming_soon",
+      "ticket_url": null
+    },
+    {
+      "id": "2026-02-12-leo",
+      "date": "2026-02-12",
+      "time": "20:30",
+      "city": "LEÓN",
+      "venue": "Teatro del Bicentenario",
+      "status": "coming_soon",
+      "ticket_url": null
+    },
+    {
+      "id": "2026-02-13-ags",
+      "date": "2026-02-13",
+      "time": "20:30",
+      "city": "AGUASCALIENTES",
+      "venue": "Teatro Morelos",
+      "status": "coming_soon",
+      "ticket_url": null
+    },
+    {
+      "id": "2026-02-18-chi",
+      "date": "2026-02-18",
+      "time": "20:30",
+      "city": "CHIHUAHUA",
+      "venue": "Teatro de los Héroes",
+      "status": "coming_soon",
+      "ticket_url": null
+    },
+    {
+      "id": "2026-02-21-gdl",
+      "date": "2026-02-21",
+      "time": "20:30",
+      "city": "GUADALAJARA",
+      "venue": "Teatro Diana",
+      "status": "coming_soon",
+      "ticket_url": null
+    },
+    {
+      "id": "2026-02-28-slp",
+      "date": "2026-02-28",
+      "time": "20:30",
+      "city": "S.L. POTOSÍ",
+      "venue": "Teatro de la Paz",
+      "status": "coming_soon",
+      "ticket_url": null
+    }
+  ],
+  "ui": {
+    "cta": {
+      "coming_soon": "PRÓXIMAMENTE",
+      "on_sale": "COMPRAR BOLETOS",
+      "sold_out": "AGOTADO"
+    }
+  }
+}
