@@ -288,8 +288,8 @@ export function EnrolladosShow() {
           </Badge>
         </div>
 
-        {/* FAB - Floating Action Button */}
-        <div className="fixed bottom-6 left-0 right-0 z-50 flex justify-center px-4">
+        {/* FAB - Floating Action Button (solo móvil) */}
+        <div className="md:hidden fixed bottom-6 left-0 right-0 z-50 flex justify-center px-4">
           <button
             onClick={() => setIsSearchOpen(true)}
             className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-4 rounded-full shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-110 flex items-center gap-3 font-black text-sm sm:text-base border-4 border-blue-400/30 hover:border-blue-300/60"
@@ -297,6 +297,102 @@ export function EnrolladosShow() {
             <Search className="w-5 h-5" />
             BUSCAR CIUDAD
           </button>
+        </div>
+
+        {/* Buscador inline para desktop/tablet */}
+        <div className="hidden md:block max-w-4xl mx-auto mb-8">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border-2 border-white/20 shadow-2xl">
+            <h3 className="text-white text-center text-xl lg:text-2xl font-black mb-6 tracking-wide">
+              BUSCA TU CIUDAD
+            </h3>
+
+            {/* Search Input */}
+            <div className="relative group mb-6">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/60 group-hover:text-white/80 transition-colors duration-300" />
+              <Input
+                type="text"
+                placeholder="Escribe el nombre de tu ciudad..."
+                value={searchQuery}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value)
+                  setSelectedCity(null)
+                }}
+                className="w-full pl-12 pr-12 py-4 bg-white/20 backdrop-blur-sm border-2 border-white/40 rounded-xl text-white placeholder:text-white/60 focus:bg-white/30 focus:border-white/80 focus:ring-4 focus:ring-white/20 transition-all duration-300 text-base font-semibold hover:bg-white/25 hover:border-white/60"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white transition-all duration-300 hover:scale-125 hover:rotate-90"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              )}
+            </div>
+
+            {/* Results/Cities Grid */}
+            {searchQuery === "" ? (
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+                {uniqueCities.map((city) => {
+                  const eventsInCity = showData.dates.filter((show) => show.city === city).length
+                  return (
+                    <button
+                      key={city}
+                      onClick={() => setSearchQuery(city)}
+                      className="text-left px-4 py-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105 border-2 border-white/20 hover:border-white/40 hover:shadow-lg hover:shadow-white/10 group/city"
+                    >
+                      <div className="flex items-center justify-between">
+                        <span className="text-white font-bold text-sm lg:text-base group-hover/city:text-yellow-300 transition-colors">
+                          {city}
+                        </span>
+                        <span className="text-yellow-300 text-xs lg:text-sm font-bold">
+                          {eventsInCity}
+                        </span>
+                      </div>
+                    </button>
+                  )
+                })}
+              </div>
+            ) : filteredDates.length > 0 ? (
+              <div className="space-y-3">
+                <p className="text-white/80 font-semibold text-center text-sm">
+                  Mostrando {filteredDates.length} {filteredDates.length === 1 ? "evento" : "eventos"} en{" "}
+                  <span className="text-yellow-300 font-black">{searchQuery}</span>
+                </p>
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 animate-in fade-in slide-in-from-top-2 duration-300">
+                  {Array.from(new Set(filteredDates.map((show) => show.city))).map((city) => {
+                    const eventsInCity = filteredDates.filter((show) => show.city === city).length
+                    return (
+                      <button
+                        key={city}
+                        onClick={() => setSearchQuery(city)}
+                        className="text-left px-4 py-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105 border-2 border-yellow-400/40 hover:border-yellow-300/60 hover:shadow-lg hover:shadow-yellow-400/20"
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="text-white font-bold text-sm lg:text-base">{city}</span>
+                          <span className="text-yellow-300 text-xs lg:text-sm font-bold">
+                            {eventsInCity}
+                          </span>
+                        </div>
+                      </button>
+                    )
+                  })}
+                </div>
+              </div>
+            ) : (
+              <div className="text-center py-8 animate-in fade-in duration-300">
+                <Search className="w-12 h-12 mx-auto text-white/30 mb-3" />
+                <p className="text-yellow-300 font-bold text-base mb-2">
+                  No se encontraron eventos en "{searchQuery}"
+                </p>
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="text-white/80 hover:text-white text-sm underline transition-colors"
+                >
+                  Ver todas las ciudades
+                </button>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="bg-white/10 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl">
@@ -383,19 +479,19 @@ export function EnrolladosShow() {
           )}
         </div>
 
-        <div className="text-center mt-6 sm:mt-8 mb-20">
+        <div className="text-center mt-6 sm:mt-8 mb-20 md:mb-8">
           <div className="text-white/80 text-xs sm:text-sm">
             Más información en <span className="font-bold">musicvibe.mx</span>
           </div>
         </div>
       </div>
 
-      {/* Bottom Sheet Dialog */}
+      {/* Bottom Sheet Dialog (solo móvil) */}
       {isSearchOpen && (
         <>
           {/* Backdrop */}
           <div
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 animate-in fade-in duration-300"
+            className="md:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 animate-in fade-in duration-300"
             onClick={() => {
               setIsSearchOpen(false)
               setSearchQuery("")
@@ -403,7 +499,7 @@ export function EnrolladosShow() {
           />
 
           {/* Bottom Sheet */}
-          <div className="fixed inset-x-0 bottom-0 z-50 animate-in slide-in-from-bottom duration-500">
+          <div className="md:hidden fixed inset-x-0 bottom-0 z-50 animate-in slide-in-from-bottom duration-500">
             <div className="bg-gradient-to-br from-red-600 via-red-700 to-red-800 rounded-t-3xl shadow-2xl max-h-[80vh] overflow-hidden">
               {/* Header */}
               <div className="sticky top-0 bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4 border-b-4 border-blue-400/30">
